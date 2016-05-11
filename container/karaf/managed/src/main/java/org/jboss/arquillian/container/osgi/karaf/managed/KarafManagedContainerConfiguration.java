@@ -36,11 +36,15 @@ public class KarafManagedContainerConfiguration extends JMXContainerConfiguratio
     private Integer karafBeginningStartLevel;
     private boolean allowConnectingToRunningServer;
     private boolean outputToConsole;
+    private boolean startLocalConsole;
+    private boolean startRemoteShell;
 
     public KarafManagedContainerConfiguration() {
         super();
         this.allowConnectingToRunningServer = false;
         this.outputToConsole = true;
+        this.startLocalConsole = false;
+        this.startRemoteShell = false;
     }
 
     public String getKarafHome() {
@@ -81,6 +85,22 @@ public class KarafManagedContainerConfiguration extends JMXContainerConfiguratio
 
     public void setOutputToConsole(boolean outputToConsole) {
         this.outputToConsole = outputToConsole;
+    }
+
+    public boolean isStartLocalConsole() {
+        return startLocalConsole;
+    }
+
+    public void setStartLocalConsole(boolean startLocalConsole) {
+        this.startLocalConsole = startLocalConsole;
+    }
+
+    public boolean isStartRemoteShell() {
+        return startRemoteShell;
+    }
+
+    public void setStartRemoteShell(boolean startRemoteShell) {
+        this.startRemoteShell = startRemoteShell;
     }
 
     @Override

@@ -110,8 +110,8 @@ public class KarafManagedDeployableContainer<T extends KarafManagedContainerConf
             cmd.add("-Dkaraf.etc=" + karafHomeDir + "/etc");
             cmd.add("-Dkaraf.data=" + karafHomeDir + "/data");
             cmd.add("-Dkaraf.instances=" + karafHomeDir + "/instances");
-            cmd.add("-Dkaraf.startLocalConsole=false");
-            cmd.add("-Dkaraf.startRemoteShell=false");
+            cmd.add("-Dkaraf.startLocalConsole=" + config.isStartLocalConsole());
+            cmd.add("-Dkaraf.startRemoteShell=" + config.isStartRemoteShell());
 
             // Java properties
             cmd.add("-Djava.io.tmpdir=" + new File(karafHomeDir, "data/tmp"));
